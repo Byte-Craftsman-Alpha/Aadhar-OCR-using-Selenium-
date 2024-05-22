@@ -23,7 +23,7 @@ from selenium.webdriver.chrome.options import Options
 image_file_path = r'<path of your file>'
 driver = webdriver.Chrome()
 ```
-#Block 2: Text Extractor Class
+# Block 2: Text Extractor Class
 The text_extractor class is used to extract text from an image using the Image to Text website. The class takes the image file path, Selenium WebDriver, and timeout as input.
 
 ```python
