@@ -100,28 +100,4 @@ For example, if you want to extract the name and address from the image, you can
 ```python
 prompt = you_chat(driver, f"I want you to extract the name and address from this raw text: `{aadhar_text}`")
 ```
-You can also use a different AI assistant by modifying the URL and CSS selectors used in the you_chat class. For example, if you want to use Google Assistant instead of You.com, you can modify the code as follows:
-
-```python
-class you_chat:
-    def __init__(self, driver, prompt, timeout=10):
-        self.you_chat = driver
-        self.prompt = prompt
-        self.max_max_timeout = timeout*3
-        self.max_timeout = timeout
-        self.you_chat.get("https://assistant.google.com/")
-        self.prompt_input = WebDriverWait(self.you_chat, self.max_timeout).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'input[data-testid="userInput"]'))
-        )
-        self.prompt_input.send_keys(prompt)
-        self.send_button = WebDriverWait(self.you_chat, self.max_max_timeout).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, 'button[data-testid="input_submit"]'))
-        )
-        self.response_container = WebDriverWait(self.you_chat, self.max_max_timeout).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="userOutput"]'))
-        )
-
-        self.response = self.you_chat.execute_script("return(document.querySelector(`[data-testid='userOutput']`).parentNode.innerText)")
-        self.json = "{"+self.response.split('{')[1].split('}')[0]+"}"
-```
 - Make sure to install the necessary Selenium package (pip install selenium) and the Chrome WebDriver (available here) before running the script.
