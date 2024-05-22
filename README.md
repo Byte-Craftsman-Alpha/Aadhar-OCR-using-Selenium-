@@ -101,3 +101,18 @@ For example, if you want to extract the name and address from the image, you can
 prompt = you_chat(driver, f"I want you to extract the name and address from this raw text: `{aadhar_text}`")
 ```
 - Make sure to install the necessary Selenium package (pip install selenium) and the Chrome WebDriver (available here) before running the script.
+# Output
+```json
+{
+  "Name_in_Hindi": "चांदनी",
+  "Name_in_English": "Chandni",
+  "DOB": "01/07/****",
+  "Gender_in_Hindi": "महिला",
+  "Gender_in_English": "FEMALE",
+  "Aadhar_No": "XXXX XXXX XXXX",
+  "भारत सरकार Government of India": "",
+  "Download Date": "XX/XX/XXXX",
+  "आधारIssue Date": "XX/XX/XXXX",
+  "VID": "****************"
+}
+```
